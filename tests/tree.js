@@ -54,11 +54,13 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree('8'), expected);
 	});
 
-	QUnit.test('Плохая строка', function (assert) {
+	QUnit.test('Неккоректный ввод', function (assert) {
 		assert.strictEqual(tree(NaN), null);
 		assert.strictEqual(tree(undefined), null);
 		assert.strictEqual(tree(null), null);
 		assert.strictEqual(tree('*8'), null);
+		assert.strictEqual(tree(''), null);
+		assert.strictEqual(tree('фдлырфгж2'), null);
 	});
 
 	QUnit.test('Ёлочка высотой 5.1', function (assert) {
@@ -82,4 +84,6 @@ QUnit.module('Тестируем функцию tree', function () {
 		assert.strictEqual(tree(5.9999), expected);
 		assert.strictEqual(tree('5.9999'), expected);
 	});
+
+	
 });
