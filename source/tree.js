@@ -23,17 +23,17 @@ const tree = (height) => {
     let resurtTree = '';
 
     for (let i = 0; i < (height - 1); i++) {
-        let width = a1 + d * i;
-        let spaceLenght = (maxWidth - width) / 2;
+        const width = a1 + d * i;
+        const spaceLength = (maxWidth - width) / 2;
         
-        let spaseString = space.repeat(spaceLenght);
-        let bodyString = simbol.repeat(width);
+        const spaceString = space.repeat(spaceLength);
+        const bodyString = simbol.repeat(width);
 
-        resurtTree += `${spaseString + bodyString + spaseString}\n`;
+        resurtTree += `${spaceString}${bodyString}${spaceString}\n`;
     }
 
-    let spaseString = space.repeat(Math.floor(maxWidth / 2));
-    resurtTree += `${spaseString}|${spaseString}\n`;
+    const spaceString = space.repeat(Math.floor(maxWidth / 2));
+    resurtTree += `${spaceString}|${spaceString}\n`;
 
     return resurtTree;
 
