@@ -1,6 +1,5 @@
 'use strict'
 
-
 const tree = (height) => {
     const MIN_HEIGHT = 3;
 
@@ -15,29 +14,26 @@ const tree = (height) => {
     height = Math.floor(height);
 
     const d = 2;
-    const A1 = 1;
+    const a1 = 1;
     const nMax = height - 1;
-    const maxWidth = A1 + d * (nMax - 1);
+    const maxWidth = a1 + d * (nMax - 1);
     const space = ' ';
     const simbol = '*';
 
     let resurtTree = '';
 
     for (let i = 0; i < (height - 1); i++) {
-        let n = i + 1;
-        let width = A1 + d * (n - 1);
+        let width = a1 + d * i;
         let spaceLenght = (maxWidth - width) / 2;
         
-        resurtTree += space.repeat(spaceLenght);
-        resurtTree += simbol.repeat(width);
-        resurtTree += space.repeat(spaceLenght);
-        resurtTree += '\n';
+        let spaseString = space.repeat(spaceLenght);
+        let bodyString = simbol.repeat(width);
+
+        resurtTree += `${spaseString + bodyString + spaseString}\n`;
     }
 
-    resurtTree += space.repeat(Math.floor(maxWidth / 2));
-    resurtTree += '|';
-    resurtTree += space.repeat(Math.floor(maxWidth / 2));
-    resurtTree += '\n';
+    let spaseString = space.repeat(Math.floor(maxWidth / 2));
+    resurtTree += `${spaseString}|${spaseString}\n`;
 
     return resurtTree;
 
